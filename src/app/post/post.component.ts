@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
+
 export class PostComponent {
-  title: string = 'NVIDIA VRWorks Graphics';
-  text: string = 'VRWorks™ is a comprehensive suite of APIs, libraries, and engines that enable application and headset developers to create amazing virtual reality experiences. VRWorks enables a new level of presence by bringing physically realistic visuals, sound, touch interactions, and simulated environments to virtual reality.';
+
+  @Input() title = '';
+  @Input() text = '';
+  @Input() avatarURL = '';
+  @Input() charsetAmount = 0;
+  @Output() removeUser = new EventEmitter<void>();
+
+  onRemoveUser() {
+    this.removeUser.emit();
+  }
 }

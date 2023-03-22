@@ -1,4 +1,15 @@
-<div class="post-body">
-    <div class="post-title">{{title}}</div>
-    <div class="post-text">{{text}}</div>
+<div class="body">
+    <div class="img-block">
+        <img class="img" [src]="avatarURL" alt="picture" >
+    </div>
+    <div class="text-block">
+        <h2>{{title}}</h2>
+        <div class="post-text">{{text}}</div>
+        <p>This post contains {{charsetAmount}} characters</p>
+    </div>
+    <div class="removeBtnBlock">
+        <button 
+        (click)="onRemoveUser()"
+        class="removeBtn">Remove user</button>
+    </div>
 </div>
